@@ -2,7 +2,6 @@ from django.contrib.gis.db import models
 from django.contrib.auth import get_user_model
 # Create your models here.
 
-
 STATUS_CHOICES = (
     ("Not Validated", "Not Validated"),
     ("Validated", "Validated"),
@@ -18,6 +17,8 @@ EVENT_TYPE = (
 )
 
 User = get_user_model()
+
+# Representation of an event
 
 
 class Event(models.Model):

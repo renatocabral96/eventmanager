@@ -10,7 +10,9 @@ from . import forms
 # Create your views here.
 
 
-def BootstrapFilterView(request):
+# View that allows events to be filtered by author, location and type of event
+
+def bootstrapFilterView(request):
     queryset = Event.objects.all()
     authorq = request.GET.get('author')
     locationq = request.GET.get('location')
@@ -34,9 +36,13 @@ def BootstrapFilterView(request):
     return render(request, "BootstrapFilter.html", context)
 
 
+# Checks if an input parameter is valid
+
 def valid_param(param):
     return param != '' and param is not None
 
+
+# Allows viewing all the events that have been posted or create new ones
 
 class AllEventView(ListAPIView):
 
@@ -49,6 +55,9 @@ class AllEventView(ListAPIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+# Allows editing an event based on its id
 
 
 class EventDetailsView(APIView):

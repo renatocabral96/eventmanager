@@ -23,7 +23,7 @@ urlpatterns = [
     path(r'admin/', admin.site.urls),
     path('events/', views.AllEventView.as_view()),
     path('events/<int:pk>/', views.EventDetailsView.as_view()),
-    path('events/filter/', views.BootstrapFilterView, name='bootstrap')
+    path('events/filter/', views.bootstrapFilterView, name='bootstrap')
     # re_path(r'(?P<pk>\d+)', django_views.UpdateView.as_view()),
 ]
 
