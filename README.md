@@ -23,7 +23,7 @@ docker run -it --link some-postgis:postgres --rm postgres \
 https://github.com/renatocabral96/eventmanager.git
 
 
-------Start a a virtual environment: <br />
+------Start the virtual environment: <br />
 source venv/bin/activate
 
 
